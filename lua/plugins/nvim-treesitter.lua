@@ -14,7 +14,8 @@ local config = function()
 		ensure_installed = {
 			"php",
       "scss",
-      "vim",
+			"twig",
+			"vim",
 			"regex",
 			"rust",
 			"markdown",
@@ -30,7 +31,7 @@ local config = function()
 			"dockerfile",
 			"solidity",
 			"gitignore",
-      "python",
+			"python",
 			"vue",
 			"svelte",
 			"toml",
