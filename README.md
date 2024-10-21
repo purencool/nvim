@@ -34,3 +34,6 @@ Welcome to my NeoVim config. Use it for inspiration.
 ## author
 
 Radley E. Sidwell-Lewis
+
+### updates
+me 
