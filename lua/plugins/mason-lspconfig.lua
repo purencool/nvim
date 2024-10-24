@@ -28,6 +28,7 @@ local mason_lspconfig = {
 			"jsonls",
 			"clangd",
 			"dockerls",
+			"phpactor",
 		},
 		automatic_installation = true,
 	},

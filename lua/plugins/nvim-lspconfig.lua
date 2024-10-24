@@ -24,7 +24,7 @@ local config = function()
 			Lua = {
 				-- make the language server recognize "vim" global
 				diagnostics = {
-					globals = { "vim" },
+					globals = { "vim", "phpactor" },
 				},
 				workspace = {
 					library = {
@@ -88,6 +88,17 @@ local config = function()
 		filetypes = { "sh", "aliasrc" },
 	})
 
+	-- php
+	lspconfig.phpactor.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "php" },
+		init_options = {
+			["language_server_phpstan.enabled"] = false,
+			["language_server_psalm.enabled"] = false,
+		},
+	})
+
 	-- typescriptreact, javascriptreact, css, sass, scss, less, svelte, vue
 	lspconfig.emmet_ls.setup({
 		capabilities = capabilities,
@@ -140,10 +151,12 @@ local config = function()
 	local hadolint = require("efmls-configs.linters.hadolint")
 	local cpplint = require("efmls-configs.linters.cpplint")
 	local clangformat = require("efmls-configs.formatters.clang_format")
+	local phpcsf = require("efmls-configs.formatters.php_cs_fixer")
 
 	-- configure efm server
 	lspconfig.efm.setup({
 		filetypes = {
+			"php",
 			"solidity",
 			"lua",
 			"python",
@@ -191,6 +204,7 @@ local config = function()
 				css = { prettier_d },
 				c = { clangformat, cpplint },
 				cpp = { clangformat, cpplint },
+				php = { phpactor, phpcsf },
 			},
 		},
 	})

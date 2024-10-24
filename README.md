@@ -37,3 +37,24 @@ Radley E. Sidwell-Lewis
 
 ### updates
 me 
+
+## Installation tips
+
+### Commandline dependancies
+sudo apt install golang-go
+sudo apt install python3-virtualenv
+
+https://github.com/nvm-sh/nvm
+https://phpactor.readthedocs.io/en/master/usage/standalone.htm
+
+### Tests
+Test the to see if the nvim can see the commandline services.
+```
+echo exepath("node")
+```
+```
+echo exepath("npm")
+```
+```
+echo exepath("phpactor")
+```
