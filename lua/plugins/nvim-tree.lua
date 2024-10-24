@@ -5,11 +5,14 @@ return {
 		vim.cmd([[hi NvimTreeNormal guibg=NONE ctermbg=NONE]])
 		require("nvim-tree").setup({
 			filters = {
-				dotfiles = false,
+				dotfiles = true,
 			},
 			view = {
 				adaptive_size = true,
 			},
+        git = {
+    ignore = false,
+  },
 		})
 	end,
 }
